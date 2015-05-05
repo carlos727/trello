@@ -4,4 +4,5 @@ class Task < ActiveRecord::Base
 	validates :duration, :numericality => {:only_integer => true}
 
 	belongs_to :user
+
 end
