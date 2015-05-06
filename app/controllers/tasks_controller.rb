@@ -8,7 +8,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all.order(:finish_date)
+    @tasks = Task.all.order(finish_date: :desc)
   end
 
   # GET /tasks/1
