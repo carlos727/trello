@@ -11,36 +11,39 @@
     <%= csrf_meta_tags %>
   </head>
 
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1><%= link_to 'Trello', root_path %></h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-      </ul>
-  
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <ul class="right">
-        <% if user_signed_in? %>
-          <li><%= link_to current_user.fullname, edit_user_registration_path %></li>
-          <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to 'Sign Up', new_user_registration_path, class: 'button active' %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <% end %>
-      </ul>
-  
-      <!-- Left Nav Section -->
-      <ul class="left">
-        <li><%= link_to 'Tasks', tasks_path %></li>
-        <li><%= link_to 'Members', users_path %></li>
-      </ul>
-    </section>
-  </nav>
-
   <body>
-    <div class="row">
+    <header>
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><%= link_to 'Trello', root_path %></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <% if user_signed_in? %>
+              <li><%= image_tag current_user.profile.url(:mini) %></li>
+              <li><%= link_to current_user.fullname, edit_user_registration_path %></li>
+              <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'red' %></li>
+            <% else %>
+              <li><%= link_to 'Sign Up', new_user_registration_path, class: 'button active' %></li>
+              <li><%= link_to 'Sign In', new_user_session_path %></li>
+            <% end %>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li><%= link_to 'Tasks', tasks_path %></li>
+            <li><%= link_to 'Members', users_path %></li>
+          </ul>
+        </section>
+      </nav>
+    </header>
+
+    <section class="row">
       <div class="columns large-12">
         <br>
         <% flash.each do |type, message| %>
@@ -51,7 +54,7 @@
         <% end %>
         <%= yield %>
       </div>
-    </div>
+    </section>
     
     <%= javascript_include_tag "application" %>
   </body>

@@ -1,3 +1,74 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	margin:0;
+	padding:0;
+
+	h1 {
+		border-bottom: solid 1px #999;
+
+		span {
+			font-size: 1rem;
+		}
+	}
+
+	.content {
+		border-bottom: solid 1px #999;
+
+		ul {
+			list-style: none;
+
+			li .documents {
+				border: 1px solid #d8d8d8;
+				border-radius: 3px;
+				box-shadow: rgba(0, 0, 0, 0.2) 0 0 3px;
+				margin: 25px 0;
+				-webkit-text-stroke: 0.1pt;
+				padding: 0;
+
+				hgroup {
+					h5 {
+						border-bottom: solid 1px;
+						color: #ff6936;
+						margin: 10px 20px;
+					}
+
+					h6 {
+						margin: 0;
+					}
+				}
+
+				div {
+					&:first-of-type {
+						margin:5px 0 10px;
+					}
+
+					&:last-of-type {
+						border-bottom: solid 1px #d8d8d8;
+					}
+				}
+
+				div p {
+					font-size: 0.9em;
+					margin: 2% 2% 0;
+				}
+
+				ul {
+					list-style: none;
+					margin:0;
+
+					li p {
+						margin: 0 20px;
+					}
+				}
+
+				&:hover {
+					border: 1px solid #ff6936;
+				}
+			}
+		}
+	}
+}
+

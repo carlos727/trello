@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428233102) do
+ActiveRecord::Schema.define(version: 20150510042225) do
 
   create_table "tasks", force: true do |t|
     t.string   "title"
@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(version: 20150428233102) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "profile_file_name"
+    t.string   "profile_content_type"
+    t.integer  "profile_file_size"
+    t.datetime "profile_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
