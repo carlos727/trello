@@ -28,10 +28,12 @@ body {
 				padding: 0;
 
 				hgroup {
+					padding:0;
+
 					h5 {
-						border-bottom: solid 1px;
+						border-bottom: solid 1px #d8d8d8;
 						color: #ff6936;
-						margin: 10px 20px;
+						margin: 10px 0;
 					}
 
 					h6 {
@@ -40,18 +42,18 @@ body {
 				}
 
 				div {
+					margin:5px 0 10px;
+					border-bottom: solid 1px #d8d8d8;
+
 					&:first-of-type {
-						margin:5px 0 10px;
+						border-bottom:none;
 					}
-
-					&:last-of-type {
-						border-bottom: solid 1px #d8d8d8;
+					
+					p {
+						font-size: 0.9em;
+						margin: 2% 2% 0;
+						text-align:center;
 					}
-				}
-
-				div p {
-					font-size: 0.9em;
-					margin: 2% 2% 0;
 				}
 
 				ul {
