@@ -1,12 +1,12 @@
 <h1 class="text-center">Tasks <span><%= link_to 'New', new_task_path %></span></h1>
 
 <div class="row">
-  <section class="content columns small-12">
+  <section class="content columns small-6">
     <h2>In progress</h2>
     <ul class="row">
       <% @tasks.each do |task| %>
         <% if task.finished == false %>
-        <li class="small-12 medium-4 columns left">
+        <li class="small-12 columns">
           <article class="documents row">
             <hgroup class="text-center small-12 columns">
               <h5><%= task.title %></h5>
@@ -20,6 +20,7 @@
             <div class="small-12 columns"><p class="text-center"><b>Duration: </b><%= task.duration %>
             <% if task.duration > 1 %> hours <% else %> hour <% end %></p><div/>
             <ul class="small-12 columns">
+              <li><p class="left"><%= link_to 'Show', task %></p></li>
               <li><p class="left"><%= link_to 'Edit', edit_task_path(task) %></p></li>
               <li class="right">
                 <p><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></p>
@@ -33,13 +34,12 @@
     <br>
   </section>
 
-  <section class="content columns small-12">
-    <br/>
+  <section class="content columns small-6">
     <h2>Finished</h2>
     <ul class="row">
       <% @tasks.each do |task| %>
         <% if task.finished == true %>
-        <li class="small-12 medium-4 columns left">
+        <li class="small-12 columns">
           <article class="documents row">
             <!--<div><img src="img/article-img.png"></div>-->
             <hgroup class="text-center small-12 columns">

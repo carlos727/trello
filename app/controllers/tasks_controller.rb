@@ -8,7 +8,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all.order(finish_date: :desc)
+    @tasks = Task.all.order(finish_date: :asc)
   end
 
   # GET /tasks/1
@@ -74,11 +74,11 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:title, :description, :duration, :start_date, :finish_date, :user_id, :finished)
+      params.require(:task).permit(:title, :description, :duration, :start_date, :finish_date, :user_id, :finished, :responsible_id)
     end
 
     private
     def get_users
-      @users = User.all.map {|user| [user.name, user.id]}
+      @users = User.all.map {|user| [user.fullname, user.id]}
     end
 end
