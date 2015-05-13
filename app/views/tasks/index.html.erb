@@ -19,7 +19,7 @@
               <p><b>Duration: </b><%= task.duration %>
                 <% if task.duration > 1 %> hours <% else %> hour <% end %>
               </p>
-              <p><b>Responsible: </b><%= task.responsible_id %></p>
+              <p><b>Responsible: </b><%= find_responsable(task.responsible_id) %></p>
             </div>
             <ul class="small-12 columns">
               <li><p class="left"><%= link_to 'Show', task %></p></li>
@@ -54,7 +54,7 @@
               <p><b>Duration: </b><%= task.duration %>
                 <% if task.duration > 1 %> hours <% else %> hour <% end %>
               </p>
-              <p><b>Responsible: </b><%= task.responsible_id %></p>
+              <p><b>Responsible: </b><%= find_responsable(task.responsible_id) %></p>
             </div>
             <ul class="small-12 columns">
               <li><p class="left"><%= link_to 'Show', task %></p></li>
