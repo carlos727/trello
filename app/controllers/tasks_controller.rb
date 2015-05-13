@@ -16,6 +16,10 @@ class TasksController < ApplicationController
   def show
   end
 
+  def mytask
+    @tasks = Task.all.order(finish_date: :asc)
+  end
+
   # GET /tasks/new
   def new
     @task = Task.new

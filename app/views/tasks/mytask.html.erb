@@ -20,6 +20,7 @@
             <div class="small-12 columns"><p class="text-center"><b>Duration: </b><%= task.duration %>
             <% if task.duration > 1 %> hours <% else %> hour <% end %></p><div/>
             <ul class="small-12 columns">
+              <li><p class="left"><%= link_to 'Show', task %></p></li>
               <li><p class="left"><%= link_to 'Edit', edit_task_path(task) %></p></li>
               <li class="right">
                 <p><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></p>
@@ -53,6 +54,7 @@
             <div class="small-12 columns"><p class="text-center"><b>Duration: </b><%= task.duration %>
             <% if task.duration > 1 %> hours <% else %> hour <% end %></p><div/>
             <ul class="small-12 columns">
+              <li><p class="left"><%= link_to 'Show', task %></p></li>
               <li><p class="left"><%= link_to 'Edit', edit_task_path(task) %></p></li>
               <li class="right">
                 <p><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></p>
